@@ -1,4 +1,4 @@
-FROM maven:4.0.0 As Builder
+FROM maven:3.8.7-eclipse-temurin-17 As builder
 WORKDIR /App
 COPY . .
 RUN mvn clean package
