@@ -46,7 +46,7 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
 
 
 - CREATE TABLE cart (
-  Name varchar(100) DEFAULT NULL,
+  Name va,
   bname varchar(50) DEFAULT NULL,
   cname varchar(50) DEFAULT NULL,
   pname varchar(50) DEFAULT NULL,
@@ -87,8 +87,6 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
   Email_Id varchar(100) DEFAULT NULL,
   Contact_No int DEFAULT NULL
 );
-
-
 
 
 - CREATE TABLE login (
@@ -187,7 +185,6 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
    conn = DriverManager.getConnection("jdbc:sqlite:C:/Users/Swapnil/eclipse- 
    workspace/Online Electronic Shopping/mydatabase.db");
    
-   change it to
 
   conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DatabaseName","root","root");
 
