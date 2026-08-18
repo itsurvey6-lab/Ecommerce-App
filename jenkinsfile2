@@ -114,7 +114,8 @@ pipeline {
         stage('Docker push') {
             steps {
                 withDockerRegistry(
-                    credentialsId: 'Docker-hub', toolName: 'docker', url: 'https://index.docker.io/v1/'
+                    credentialsId: 'Docker-hub',
+                    url: 'https://index.docker.io/v1/'
                     ) {
 
                         sh '''
