@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ecm-container
-          image: itsurvey6/ecommerceapp:latest
+          image: itsurvey6/ecommerceapp:1
           ports:
             - containerPort: 8080
 

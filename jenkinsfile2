@@ -118,8 +118,8 @@ pipeline {
                     url: 'https://index.docker.io/v1/'
                 ) {
                     sh '''
-                        docker tag ecommerce:latest itsurvey6/ecommerceapp:latest
-                        docker push itsurvey6/ecommerceapp:latest
+                        docker tag ecommerce:latest itsurvey6/ecommerceapp:1
+                        docker push itsurvey6/ecommerceapp:1
                     '''
                 }
             }
