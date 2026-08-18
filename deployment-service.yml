@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ecm-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: ecm
+  
+  template:
+    metadata:
+      labels:
+        app: ecm
+
+  spec:
+    containers:
+      - name: ecm-container
+        image: itsurvey6/ecommerceapp:${BUILD_NUMBER}
+        ports:
+          - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: ecm-service
+
+spec:
+  selector: 
+    app: ecm
+
+  ports:
+    - nodePort: 30080
+      port: 8080
+      targetPort: 8080
+  type: NodePort
+
+
+
