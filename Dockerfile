@@ -6,7 +6,7 @@ COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
 COPY src ./src
-COPY mydatabase.db .
+COPY mydatabase.db ./mydatabase.db
 
 RUN mvn clean package -DskipTests
 
