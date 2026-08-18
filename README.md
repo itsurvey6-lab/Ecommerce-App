@@ -185,7 +185,6 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
    conn = DriverManager.getConnection("jdbc:sqlite:C:/Users/Swapnil/eclipse- 
    workspace/Online Electronic Shopping/mydatabase.db");
    
-   change it to
 
   conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DatabaseName","root","root");
 
