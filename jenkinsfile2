@@ -116,10 +116,12 @@ pipeline {
                 withDockerRegistry(
                     credentialsId: 'Docker-hub',
                     url: 'https://index.docker.io/v1/'
-                    ) {
-
-                        sh 'docker push itsurvey6/ecommerceapp:latest'
-                    }
+                ) {
+                    sh '''
+                        docker tag ecommerce:latest itsurvey6/ecommerceapp:latest
+                        docker push itsurvey6/ecommerceapp:latest
+                    '''
+                }
             }
         }
 
@@ -151,7 +153,7 @@ pipeline {
             steps {
                  sh '''
                     curl --fail --max-time 30 \
-                    http://localhost:30080/EcommerceApp/
+                    http://192.168.1.4:30080/EcommerceApp/
                  '''
             }
         }
