@@ -106,7 +106,7 @@ pipeline {
                     trivy image \
                         --exit-code 1 \
                         --severity HIGH,CRITICAL \
-                        ecommerce:${BUILD_NUMBER}
+                        ecommerce:latest
                 '''
             }
         }
