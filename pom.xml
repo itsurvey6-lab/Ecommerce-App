@@ -54,8 +54,7 @@
 
     <dependency>
       <groupId>com.mysql</groupId>
-      <artifactId>mysql-connec
-      tor-j</artifactId>
+      <artifactId>mysql-connector-j</artifactId>
       <version>8.2.0</version>
     </dependency>
 
