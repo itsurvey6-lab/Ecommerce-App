@@ -89,8 +89,6 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
 );
 
 
-
-
 - CREATE TABLE login (
   username varchar(100) DEFAULT NULL,
   password varchar(100) DEFAULT NULL
