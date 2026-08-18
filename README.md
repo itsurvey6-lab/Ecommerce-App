@@ -46,7 +46,7 @@ Stay tuned, contribute, and let’s grow together in the DevOps journey! 🌍
 
 
 - CREATE TABLE cart (
-  Name varchar(100) DEFAULT NULL,
+  Name va,
   bname varchar(50) DEFAULT NULL,
   cname varchar(50) DEFAULT NULL,
   pname varchar(50) DEFAULT NULL,
