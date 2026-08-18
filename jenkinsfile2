@@ -84,7 +84,7 @@ pipeline {
 
   //      stage('OWASP Dependency Check Publisher') {
   //          steps {
-  //              dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+//              dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
 //            }
   //      }
 
