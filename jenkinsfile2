@@ -96,7 +96,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t ecommerce:${BUILD_NUMBER} .'
+                sh 'docker build -t ecommerce:$latest .'
             }
         }
 
@@ -118,19 +118,40 @@ pipeline {
                     url: 'https://index.docker.io/v1/'
                     ) {
 
-                        sh '''
-                            docker tag ecommerce:${BUILD_NUMBER} itsurvey6/ecommerceapp:${BUILD_NUMBER}
-                            docker push itsurvey6/ecommerceapp:${BUILD_NUMBER}
-                        '''
+                        sh 'docker push itsurvey6/ecommerceapp:latest'
                     }
             }
         }
 
+        stage('K3S deploy') {
+            steps {
+                 sh '''
+                    scp deployment-service.yml \
+                    ubuntu@192.168.1.4:/home/ubuntu/deployment-service.yml
+
+                    ssh ubuntu@192.168.1.4 "
+                        kubectl apply -f /home/ubuntu/deployment-service.yml
+                    "
+                 '''
+            }
+        }
+
+        stage('K3S verify') {
+            steps {
+                 sh '''
+                    ssh ubuntu@192.168.1.4 "
+                        kubectl get pods
+                        kubectl get deployments
+                        kubectl get svc
+                    "
+                 '''
+            }
+        }
         stage('Curl Test') {
             steps {
                  sh '''
                     curl --fail --max-time 30 \
-                    http://localhost:8081/EcommerceApp/
+                    http://localhost:30080/EcommerceApp/
                  '''
             }
         }

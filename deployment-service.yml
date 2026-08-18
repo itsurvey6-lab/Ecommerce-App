@@ -16,12 +16,12 @@ spec:
       labels:
         app: ecm
 
-  spec:
-    containers:
-      - name: ecm-container
-        image: itsurvey6/ecommerceapp:${BUILD_NUMBER}
-        ports:
-          - containerPort: 8080
+    spec:
+      containers:
+        - name: ecm-container
+          image: itsurvey6/ecommerceapp:${BUILD_NUMBER}
+          ports:
+            - containerPort: 8080
 
 ---
 
